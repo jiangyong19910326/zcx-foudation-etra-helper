@@ -201,7 +201,7 @@ class Helper {
 		$client = new \GuzzleHttp\Client();
 		$location = $lng . ',' . $lat;
 
-		$key = config('amap.key', '8c3a4fd651b433bc8492447c3be696cb');
+		$key = config('amap.key', '34f88d11406c14b099387d47345df7ff');
 		$apiURL = config('amap.url', 'http://restapi.amap.com/v3') . '/assistant/coordinate/convert?key=' . $key . '&coordsys=gps&locations=' . urlencode($location);
 
 		$res = $client->request('GET', $apiURL);
@@ -222,7 +222,7 @@ class Helper {
 		// 	$address = '北京市' . $address;
 		// }
 		$client = new \GuzzleHttp\Client();
-		$key = config('amap.key', '8c3a4fd651b433bc8492447c3be696cb');
+		$key = config('amap.key', '34f88d11406c14b099387d47345df7ff');
 		$query = [
 			'key' => $key,
 			'address' => $address,
@@ -307,7 +307,7 @@ class Helper {
 	static function geoRecode($lng, $lat) {
 		$client = new \GuzzleHttp\Client();
 		$location = $lng . ',' . $lat;
-		$key = config('amap.key', '8c3a4fd651b433bc8492447c3be696cb');
+		$key = config('amap.key', '34f88d11406c14b099387d47345df7ff');
 		$apiURL = config('amap.url', 'http://restapi.amap.com/v3') . '/geocode/regeo?key=' . $key . '&location=' . urlencode($location);
 		$res = $client->request('GET', $apiURL);
 
@@ -324,7 +324,7 @@ class Helper {
 	 */
 	static function getDistance($origins, $destination) {
 		$client = new \GuzzleHttp\Client();
-		$key = config('amap.key', '8c3a4fd651b433bc8492447c3be696cb');
+		$key = config('amap.key', '34f88d11406c14b099387d47345df7ff');
 		$apiURL = config('amap.url', 'http://restapi.amap.com/v3') . '/distance?key=' . $key . '&origins=' . $origins . '&destination=' . $destination;
 		$res = $client->request('GET', $apiURL);
 
@@ -346,7 +346,7 @@ class Helper {
 	 */
 	static function getPlaceText($keyword) {
 		$client = new \GuzzleHttp\Client();
-		$key = config('amap.key', '8c3a4fd651b433bc8492447c3be696cb');
+		$key = config('amap.key', '34f88d11406c14b099387d47345df7ff');
 		$apiURL = config('amap.url', 'http://restapi.amap.com/v3') . '/place/text?key=' . $key . '&extensions=base&offset=10&page=1&keywords=' . $keywords;
 		$res = $client->request('GET', $apiURL);
 		return $res;
@@ -554,7 +554,7 @@ class Helper {
 	}
 	static function geoAddress($keywords) {
 		$client = new \GuzzleHttp\Client(['expect' => false]);
-		$key = config('amap.key', '8c3a4fd651b433bc8492447c3be696cb');
+		$key = config('amap.key', '34f88d11406c14b099387d47345df7ff');
 		$apiURL = config('amap.url', 'http://restapi.amap.com/v3') . '/place/text?key=' . $key . '&extensions=base&children=1&citylimit=true&offset=10&page=1&keywords=' . $keywords;
 		//&city=' . $cityCode . '
 		$res = $client->request('GET', $apiURL);
@@ -574,7 +574,7 @@ class Helper {
 
 	static function geoAddressAll($keywords, $city_code) {
 		$client = new \GuzzleHttp\Client(['expect' => false]);
-		$key = config('amap.key', '8c3a4fd651b433bc8492447c3be696cb');
+		$key = config('amap.key', '34f88d11406c14b099387d47345df7ff');
 		if ($city_code) {
 			$apiURL = config('amap.url', 'http://restapi.amap.com/v3') . '/place/text?key=' . $key . '&extensions=base&children=1&citylimit=true&offset=10&page=1&keywords=' . $keywords . '&city=' . $city_code;
 		} else {
@@ -608,7 +608,7 @@ class Helper {
 		// 	$city = '北京市';
 		// 	break;
 		// }
-		$ak = 'YCQdpq3ssE045BfqAc7edDTceKwugern';
+		$ak = 'GE4FN5TCITOY8vlpEih45AesDnoMYktp';
 
 		$client = new \GuzzleHttp\Client();
 		$apiURL = 'https://api.map.baidu.com/geocoder/v2/?output=json&ret_coordtype=gcj02ll&ak=' . $ak . '&address=' . urlencode($address); //.'&city=' . urlencode($city);
@@ -639,7 +639,7 @@ class Helper {
 	}
 	static function geoReGeoCode($lng, $lat) {
 		$client = new \GuzzleHttp\Client(['expect' => false]);
-		$key = config('amap.key', '8c3a4fd651b433bc8492447c3be696cb');
+		$key = config('amap.key', '34f88d11406c14b099387d47345df7ff');
 		$apiURL = config('amap.url', 'http://restapi.amap.com/v3') . '/geocode/regeo?key=' . $key . '&location=' . $lng . ',' . $lat . '&poitype=&radius=&extensions=base&batch=false&roadlevel=0';
 		$res = $client->request('GET', $apiURL);
 		$obj = json_decode($res->getBody());
